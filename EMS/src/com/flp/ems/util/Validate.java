@@ -10,18 +10,19 @@ public class Validate{
  
   private static String DATE_PATTERN = 
           "(0?[1-9]|[12][0-9]|3[01])/(0?[1-9]|1[012])/((19|20)\\d\\d)";
+  
+  private static String EMAIL_PATTERN = 
+			"^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+			+ "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
 	  
-  public Validate(){
-	  pattern = Pattern.compile(DATE_PATTERN);
-  }
+  private static String NAME_PATTERN="^[A-Z][a-zA-Z\\s]*$";
+  
+  private static String KIN_ID="[0-9]{5}";
+  
+  private static String PHONE="[0-9]{10}";
 	  
-  /**
-   * Validate date format with regular expression
-   * @param date date address for validation
-   * @return true valid date format, false invalid date format
-   */
    public boolean valid_Date(String date){
-		  
+	 pattern = Pattern.compile(DATE_PATTERN);  
      matcher = pattern.matcher(date);
 
      if(matcher.matches()){
@@ -64,6 +65,34 @@ public class Validate{
 	  return false;
      }			    
    }
+   
+   public boolean validateName(String Name)
+   {
+	   pattern=Pattern.compile(NAME_PATTERN);
+	   matcher=pattern.matcher(Name);
+      return matcher.matches();
+   }
 
+  
+		public boolean validateEmail(String email) {
+
+			pattern = Pattern.compile(EMAIL_PATTERN);
+			matcher = pattern.matcher(email);
+			return matcher.matches();
+		}
+		
+		public boolean validateKinid(String id) {
+
+			pattern = Pattern.compile(KIN_ID);
+			matcher = pattern.matcher(id);
+			return matcher.matches();
+		}
+		
+		public boolean validatephone(String ph) {
+
+			pattern = Pattern.compile(PHONE);
+			matcher = pattern.matcher(ph);
+			return matcher.matches();
+		}
 }
 

@@ -4,26 +4,31 @@ public class Project {
 
 	int Prjectid;
 
+	int depid;
+
 	private String prjname,description;
 
-	int deptid;
+	public Department dept;
 	
-	Department d = new Department();
-
-	public void setPrjectid(int prjectid) {
-		Prjectid = prjectid;
+	public void setPrjectid(int pid) {
+		Prjectid = pid;
 	}
 
 	public void setPrjname(String prjname) {
-		this.prjname = "java";
+		this.prjname = prjname;
 	}
 
 	public void setDescription(String description) {
-		this.description = "prj_description";
+		this.description = description;
 	}
 
-	public void setDeptid(String deptid) {
-		this.deptid = d.getDeptid();
+	
+	public void setDept(Department dept) {
+		this.dept = dept;
+	}
+
+	public void setDepid(int depid) {
+		this.depid = dept.getDeptid();;
 	}
 
 	public int getPrjectid() {
@@ -38,9 +43,23 @@ public class Project {
 		return description;
 	}
 
-	public int getDeptid() {
-		return deptid;
+	
+	public Department getDept() {
+		return dept;
 	}
+
+	public int getDepid() {
+		return depid;
+	}
+
+	@Override
+	public String toString() {
+		return "Project: Prjectid=" + Prjectid + ", prjname=" + prjname + ", description=" + description + "]";
+	}
+
+	
+
+
 
 	
 	

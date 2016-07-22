@@ -1,33 +1,67 @@
 package com.flp.ems.domain;
 
+
+
 public class Department {
 
-	private String name,description;
+	private String dname,description;
 	int deptid;
 
-	public void setName(String name) {
-		this.name = "FS";
+	
+
+	
+
+	public void setDname(String dname) {
+		this.dname = dname;
 	}
+
+
+
+
 
 	public void setDescription(String description) {
 		this.description = description;
 	}
 
-	public String getName() {
-		return name;
+
+
+
+
+	public void setDeptid(int deptid) {
+		this.deptid = deptid;
 	}
 
-	public int getDeptid() {
-		return deptid;
+
+
+
+
+	public String getDname() {
+		return dname;
 	}
+
+
+
+
 
 	public String getDescription() {
 		return description;
 	}
 
-	public void setDeptid(int deptid) {
-		// TODO Auto-generated method stub
-		this.deptid = deptid;
+
+
+
+
+	public int getDeptid() {
+		return deptid;
+	}
+
+
+
+
+
+	@Override
+	public String toString() {
+		return "Department: dname=" + dname + ", description=" + description + ", deptid=" + deptid + "]";
 	}
 	
 	
